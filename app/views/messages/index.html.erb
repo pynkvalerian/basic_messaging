@@ -1,0 +1,33 @@
+<table>
+  <thead>
+    <th>Sender</th>
+    <th>Recipient</th>
+    <th>Text</th>
+    <th>Read</th>
+    <th>Sent at</th>
+  </thead>
+  <tbody>
+    <% @messages.each do |message| %>
+    <tr>
+      <td><%= message.messageable.username %></td>
+      <td><%= message.recievable.username %></td>
+      <td><%= message.text %></td>
+      <td><%= message.read %></td>
+      <td><%= message.created_at.strftime("%d %b, %I:%M %P") %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<div style="float:left">
+  <% @received_messages.each do |message| %>
+  <li><%= message.text %> | <%= message.created_at.strftime("%d %b, %I:%M %P") %></li>
+  <% end %>
+</div>
+
+<div style="float:right">
+  <% @sent_messages.each do |message| %>
+  <li><%= message.text %> | <%= message.created_at.strftime("%d %b, %I:%M %P") %></li>
+  <% end %>
+</div>

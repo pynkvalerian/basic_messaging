@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @brand.username %>
+</p>
+
+<p>
+  <strong>Jobs:</strong>
+  <% @brand.jobs.each do |j| %>
+  <li>Title: <%= link_to j.title, j %></li>
+  <% end %>
+</p>
+
+<%= link_to 'Inbox', inbox_path %> |
+<%= link_to 'Edit', edit_brand_path(@brand) %> |
+<%= link_to 'Back', brands_path %>

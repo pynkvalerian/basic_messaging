@@ -1,0 +1,45 @@
+<h1>Testing</h1>
+
+<div>
+  <h3>Brand Sign In</h3>
+
+  <%= form_for(:brand_session, url: brand_sessions_path) do |f| %>
+
+    <div class='input'>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+
+    <div class='input'>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Log in'%>
+    </div>
+  <% end %>
+
+</div>
+
+<div>
+  <h3>User Sign In</h3>
+
+  <%= form_for(:user_session, url: user_sessions_path) do |f| %>
+
+    <div class='input'>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+
+    <div class='input'>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Log in'%>
+    </div>
+  <% end %>
+
+</div>

@@ -1,0 +1,10 @@
+Send a message!
+
+<%= form_for @message, url: proposal_messages_path(@proposal), method: :post do |f| %>
+
+  <%= f.label :text %>
+  <%= f.text_field :text %>
+
+  <%= f.submit 'Send message' %>
+
+<% end %>

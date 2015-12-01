@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestMessage</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+  </head>
+  <body>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Dashboard', current_user %>
+      <%= link_to 'Sign out', user_session_path(current_user), method: :delete %>
+    <% elsif brand_signed_in? %>
+      <%= link_to 'Dashboard', current_brand %>
+      <%= link_to 'Sign out', brand_session_path(current_brand), method: :delete %>
+    <% end %>
+
+    <%= yield %>
+
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>Proposal ID</th>
+    <th>Recipient</th>
+    <th>Text</th>
+    <th>Read</th>
+  </thead>
+  <tbody>
+    <% @conversations.each do |convo| %>
+    <tr>
+      <td><%= link_to convo.id, proposal_messages_path(convo) %></td>
+      <td><%= convo.messages.first.recievable.username %></td>
+      <td><%= convo.messages.first.text %></td>
+      <td><%= convo.messages.first.read %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

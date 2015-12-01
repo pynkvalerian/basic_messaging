@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @job.brand_id %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @job.title %>
+</p>
+<p>
+  <strong>Proposals:</strong>
+  <% @job.proposals.each do |p| %>
+  <li>Title: <%= link_to p.title, p %> | User: <%= p.user_id %> | <%= link_to 'Message', new_proposal_message_path(p) %></li>
+  <% end %>
+</p>
+
